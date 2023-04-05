@@ -41,9 +41,9 @@ public class LocacaoServiceTest {
 		Assert.assertThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)), CoreMatchers.is(true));
 	
 		//verificacao com ErrorCollector
-		error.assertThat(locacao.getValor(), CoreMatchers.is(CoreMatchers.equalTo(5.0)));
-		error.assertThat(locacao.getValor(), CoreMatchers.is(CoreMatchers.not(6.0)));
-		error.assertThat(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()), CoreMatchers.is(true));
+		error.checkThat(locacao.getValor(), CoreMatchers.is(CoreMatchers.equalTo(5.0)));
+		error.checkThat(locacao.getValor(), CoreMatchers.is(CoreMatchers.not(6.0)));
+		error.checkThat(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()), CoreMatchers.is(true));
 		
 	}
 }
